@@ -1,0 +1,147 @@
+/* Reset & font */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2 {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-image: url(poto/potobg.jpeg);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.tab-buttons {
+  margin-top: 20px;
+}
+
+.tab-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: white;
+  color: #333;
+  font-weight: 700;
+}
+    .cta-button {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: #2e7d32;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cta-button.alt {
+      background-color: #1565c0;
+    }
+/* Tab Sections */
+.tab-section {
+  display: none;
+  padding: 40px 20px;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+/* Boxes layout */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Box style */
+.box {
+  flex: 1 1 300px;
+  max-width: 400px;
+  padding: 30px 25px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.box h2 {
+  margin-bottom: 15px;
+  font-size: 1.9rem;
+  color: #2c7a7b;
+}
+
+.box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.box img {
+  margin-top: 25px;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* CTA Section */
+.cta {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.cta a.cta-button {
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin: 10px;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.cta a.cta-button:hover {
+  background-color: #eee;
+}
+
+.cta a.cta-button.alt {
+  background-color: #fff;
+  color: #10b981;
+}

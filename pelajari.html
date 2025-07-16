@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pelajari Lebih Lanjut - Gen Z Campaign</title>
+  <link rel="stylesheet" href="dzl2.css" />
+</head>
+<body>
+  <header>
+    <h1>Pelajari Lebih Lanjut - Kampanye Gen Z</h1>
+  </header>
+  <main>
+    <p>Temukan informasi lebih lengkap seputar kampanye kami dan bagaimana kamu bisa berkontribusi.</p>
+    <p>Jadilah bagian dari generasi yang sadar akan lingkungan, kesehatan mental, dan literasi digital!</p>
+
+    <a href="#" class="cta-button alt" onclick="sharePelajari()">Bagikan Info Ini</a>
+    <p>Hubungi kami di <a href="mailto:info@gen-z.com">info@gen-z.com</a> untuk pertanyaan lebih lanjut.</p>
+    <button onclick="window.history.back()">Kembali</button>
+  </main>
+
+  <script>
+    function sharePelajari() {
+      const pelajariUrl = window.location.href;
+      const shareData = {
+        title: 'Pelajari Lebih Lanjut - Kampanye Gen Z',
+        text: 'Yuk, cari tahu lebih banyak tentang kampanye lingkungan, kesehatan mental, dan literasi digital!',
+        url: pelajariUrl
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Info berhasil dibagikan!'))
+          .catch((error) => console.error('Gagal membagikan:', error));
+      } else {
+        navigator.clipboard.writeText(shareData.url)
+          .then(() => alert('Link telah disalin ke clipboard!'))
+          .catch((error) => alert('Gagal menyalin link: ' + error));
+      }
+    }
+  </script>
+</body>
+</html>

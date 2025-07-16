@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Campaign - Gen Z</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dzl.css">
+  <link rel="icon" href="th.jpg" type="image">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>🌍 Social Campaign Gen Z</h1>
+      <p>Lingkungan, Mental Health, Literasi Digital, dan Aksi Sosial lainnya untuk masa depan yang lebih baik.</p>
+      <div class="tab-buttons">
+        <button onclick="showSection('lingkungan')" class="tab-button active">Lingkungan</button>
+        <button onclick="showSection('mentalhealth')" class="tab-button">Mental Health</button>
+        <button onclick="showSection('literasidigital')" class="tab-button">Literasi Digital</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Lingkungan Section -->
+  <section id="lingkungan" class="tab-section active">
+    <div class="boxes">
+      <div class="box">
+        <h2>🌿😊 Selamatkan Bumi Kita!</h2>
+        <img src="poto/th.jpg" alt="Ilustrasi Lingkungan">
+        <p>Gabung gerakan kampanye lingkungan demi masa depan yang lebih hijau.</p>
+      </div>
+      <div class="box">
+        <h2>♻️ Daur Ulang Sampah</h2>
+        <img src="poto/poto1.1.jpg" alt="Ilustrasi Daur Ulang">
+        <p>Mulailah memilah sampah rumah tangga dan manfaatkan barang bekas untuk kehidupan yang lebih berkelanjutan.</p>
+      </div>
+      <div class="box">
+        <h2>🌱 Tanam Pohon</h2>
+        <img src="poto/poto1.2.jpg" alt="Ilustrasi Penanaman Pohon">
+        <p>Ikut serta dalam program penghijauan untuk mengurangi polusi dan menjaga keseimbangan alam.</p>
+      </div>
+    </div>
+    <section class="cta">
+      <h2>Yuk, Mulai Aksi!</h2>
+      <a href="#" class="cta-button" onclick="donate()">Donasi</a>
+      <a href="#" class="cta-button alt" onclick="shareCampaign()">Bagikan Kampanye Ini</a>
+    </section>
+  </section>
+
+  <!-- Mental Health Section -->
+  <section id="mentalhealth" class="tab-section">
+    <div class="boxes">
+      <div class="box">
+        <h2>🧠 Jaga Kesehatan Mental</h2>
+        <img src="poto/poto2.1.jpg" alt="Ilustrasi Mental Health">
+        <p>Perhatikan kesehatan mentalmu dan dukung sesama untuk hidup lebih bahagia.</p>
+      </div>
+      <div class="box">
+        <h2>💬 Ayo Cerita!</h2>
+        <img src="poto/poto2.jpg" alt="Ilustrasi Cerita">
+        <p>Jangan ragu untuk berbagi cerita, kita di sini untuk mendengarkan.</p>
+      </div>
+      <div class="box">
+        <h2>🤝 Sahabat untuk Semua!</h2>
+        <img src="poto/poto1 (2).jpg" alt="Ilustrasi Friendship">
+        <p>Dukung teman-temanmu untuk menciptakan lingkungan sekolah yang positif.</p>
+      </div>
+    </div>
+    <section class="cta">
+      <h2>Bersama Kita Bisa!</h2>
+      <a href="#" class="cta-button" onclick="ikutKampanye()">Ikut Kampanye</a>
+      <a href="#" class="cta-button alt" onclick="shareCampaign()">Bagikan Pesan Ini</a>
+    </section>
+  </section>
+
+  <!-- Literasi Digital Section -->
+  <section id="literasidigital" class="tab-section">
+    <div class="boxes">
+      <div class="box">
+        <h2>📱 Bijak Bermedia Sosial</h2>
+        <img src="poto/poto.3.2.webp" alt="Ilustrasi Media Sosial">
+        <p>Pelajari cara menggunakan media sosial dengan bijak agar terhindar dari hoaks dan cyberbullying.</p>
+      </div>
+      <div class="box">
+        <h2>🔒 Keamanan Online</h2>
+        <img src="poto/poto3.1.jpg" alt="Ilustrasi Cyber Security">
+        <p>Jaga data pribadimu dan hindari serangan siber dengan tips sederhana dan efektif.</p>
+      </div>
+      <div class="box">
+        <h2>💻 Etika Digital</h2>
+        <img src="poto/etika.jpg" alt="Ilustrasi Etika Digital">
+        <p>Pahami etika dalam berkomunikasi secara online, agar lebih menghargai orang lain dan menciptakan ruang digital yang sehat.</p>
+      </div>
+    </div>
+    <section class="cta">
+      <h2>Jadilah Generasi Cerdas Digital!</h2>
+      <a href="#" class="cta-button" onclick="pelajariLebihLanjut()">Pelajari Lebih Lanjut</a>
+      <a href="#" class="cta-button alt" onclick="shareCampaign()">Bagikan Info Ini</a>
+    </section>
+  </section>
+
+  <!-- Script untuk tab switching dan fitur CTA -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.tab-section');
+      sections.forEach(section => section.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelector(`.tab-button[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+
+    function donate() {
+      window.location.href = 'donasi.html'; // Ganti dengan link halaman donasi nyata
+    }
+
+    function ikutKampanye() {
+      window.location.href = 'kampanye.html'; // Ganti dengan link halaman kampanye nyata
+    }
+
+    function pelajariLebihLanjut() {
+      window.location.href = 'pelajari.html'; // Ganti dengan link halaman pelajari nyata
+    }
+
+    function shareCampaign() {
+      const shareData = {
+        title: 'Social Campaign - Gen Z',
+        text: 'Ayo dukung kampanye Gen Z untuk lingkungan, mental health, dan literasi digital!',
+        url: window.location.href
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Berhasil dibagikan!'))
+          .catch((err) => console.error('Gagal membagikan:', err));
+      } else {
+        navigator.clipboard.writeText(window.location.href)
+          .then(() => alert('Link kampanye telah disalin ke clipboard!'))
+          .catch((err) => alert('Gagal menyalin link: ' + err));
+      }
+    }
+  </script>
+</body>
+</html>

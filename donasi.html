@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donasi - Gen Z Campaign</title>
+  <link rel="stylesheet" href="dzl2.css" />
+</head>
+<body>
+  <header>
+    <h1>Donasi untuk Kampanye Lingkungan Gen Z</h1>
+  </header>
+  <main>
+    <p>Terima kasih telah mendukung kampanye kami! Silakan transfer donasi melalui rekening berikut:</p>
+    <ul>
+      <li><strong>Bank ABC</strong>: 123456789 (a.n. Social Campaign Gen Z)</li>
+      <li><strong>Bank XYZ</strong>: 987654321 (a.n. Social Campaign Gen Z)</li>
+    </ul>
+   
+
+    <!-- QR Code container -->
+    <div id="qrcode"></div>
+    <div class="qr-title">Scan QR Code untuk Donasi</div>
+
+    <a href="#" class="cta-button alt" onclick="shareDonasi()">Bagikan Donasi Ini</a>
+     <p>Konfirmasi donasi ke <a href="mailto:donasi@gen-z.com">donasi@gen-z.com</a></p>
+     <button onclick="window.history.back()">Kembali</button>
+  </main>
+
+  <!-- Load QRCode.js dari CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <script>
+    // Generate QR code dengan URL donasi (ubah sesuai domain kamu)
+    const donasiUrl = window.location.href; 
+
+    new QRCode(document.getElementById("qrcode"), {
+      text: donasiUrl,
+      width: 180,
+      height: 180,
+      colorDark: "#4CAF50",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+
+    // Fungsi share donasi
+    function shareDonasi() {
+      const shareData = {
+        title: 'Dukung Kampanye Lingkungan - Gen Z',
+        text: 'Ayo berdonasi untuk mendukung kampanye lingkungan Gen Z. Bersama kita bisa wujudkan perubahan!',
+        url: donasiUrl
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Link donasi berhasil dibagikan!'))
+          .catch((error) => console.error('Gagal membagikan:', error));
+      } else {
+        navigator.clipboard.writeText(shareData.url)
+          .then(() => alert('Link donasi telah disalin ke clipboard!'))
+          .catch((error) => alert('Gagal menyalin link: ' + error));
+      }
+    }
+  </script>
+</body>
+</html>

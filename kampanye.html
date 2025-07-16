@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ikut Kampanye - Gen Z Campaign</title>
+  <link rel="stylesheet" href="dzl2.css" />
+</head>
+<body>
+  <header>
+    <h1>Ikut Kampanye Lingkungan Gen Z</h1>
+  </header>
+  <main>
+    <p>Terima kasih telah mendukung kampanye kami! Yuk, bersama kita ciptakan perubahan positif!</p>
+    <p>Bergabunglah dengan aksi nyata di komunitas kami dan jadilah agen perubahan di sekitar kamu.</p>
+
+    <a href="#" class="cta-button alt" onclick="shareKampanye()">Bagikan Kampanye Ini</a>
+    <p>Hubungi kami di <a href="mailto:kampanye@gen-z.com">kampanye@gen-z.com</a> untuk informasi lebih lanjut.</p>
+    <button onclick="window.history.back()">Kembali</button>
+  </main>
+
+  <script>
+    function shareKampanye() {
+      const kampanyeUrl = window.location.href;
+      const shareData = {
+        title: 'Gabung Kampanye Lingkungan - Gen Z',
+        text: 'Ayo ikut kampanye lingkungan bersama Gen Z. Bersama kita ciptakan perubahan!',
+        url: kampanyeUrl
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData)
+          .then(() => console.log('Kampanye berhasil dibagikan!'))
+          .catch((error) => console.error('Gagal membagikan:', error));
+      } else {
+        navigator.clipboard.writeText(shareData.url)
+          .then(() => alert('Link kampanye telah disalin ke clipboard!'))
+          .catch((error) => alert('Gagal menyalin link: ' + error));
+      }
+    }
+  </script>
+</body>
+</html>
